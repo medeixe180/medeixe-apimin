@@ -21,12 +21,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="Application\Controllers\WeatherForecastController.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Application\UseCases" />
-  </ItemGroup>
-
 </Project>

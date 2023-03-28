@@ -1,6 +1,11 @@
+using System.Reflection;
+
 namespace MedeixeApi.Application;
 
-public class ConfigureServices
+public static class ConfigureServices
 {
-    
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+    {
+        return services;
+    }
 }

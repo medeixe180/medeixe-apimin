@@ -16,4 +16,3 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
 
     public DbSet<Victim> Victims => Set<Victim>();
 }
- 
