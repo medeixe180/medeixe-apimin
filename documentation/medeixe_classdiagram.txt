@@ -1,0 +1,28 @@
+@startuml
+class Vitima {
+  -nome: string
+  -idade: int
+  -genero: string
+  -endereco: string
+  -numeroTelefone: string
+  -email: string
+  -contatoEmergencia: string
+  -medidaProtetiva: boolean
+}
+
+class OcorrenciaViolenciaDomestica {
+  -dataHoraRegistro: DateTime
+  -dataHoraAtendimento: DateTime
+  -dataHoraFinalizacao: DateTime
+  -latitude: float
+  -longitude: float
+  -descricaoCaso: string
+  -tipoAgressao: int
+  -nivelPrioridade: int
+  -statusAtendimento: int
+  -numeroViatura: string
+}
+
+Vitima "1..*" -- "1" OcorrenciaViolenciaDomestica : registra >
+
+@enduml

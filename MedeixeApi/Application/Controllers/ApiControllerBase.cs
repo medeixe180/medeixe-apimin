@@ -9,7 +9,7 @@ namespace MedeixeApi.Application.Controllers;
 public abstract class ApiControllerBase<T> : ControllerBase where T : class
 {
     protected readonly ApplicationDbContext Db;
-    private readonly DbSet<T> _dbSet;
+    protected readonly DbSet<T> _dbSet;
 
     protected ApiControllerBase(ApplicationDbContext db)
     {

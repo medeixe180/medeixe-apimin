@@ -14,5 +14,6 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
     }
 
-    public DbSet<Victim> Victims => Set<Victim>();
+    public DbSet<Vitima> Vitimas => Set<Vitima>();
+    public DbSet<OcorrenciaViolenciaDomestica> OcorrenciasViolenciaDomestica => Set<OcorrenciaViolenciaDomestica>();
 }

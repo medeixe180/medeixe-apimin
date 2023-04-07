@@ -5,5 +5,6 @@ namespace MedeixeApi.Application.Common.Interfaces;
 
 public interface IApplicationDbContext
 {
-    DbSet<Victim> Victims { get; }
+    DbSet<Vitima> Vitimas { get; }
+    DbSet<OcorrenciaViolenciaDomestica> OcorrenciasViolenciaDomestica { get; }
 }
