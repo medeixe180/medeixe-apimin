@@ -7,4 +7,6 @@ public interface IApplicationDbContext
 {
     DbSet<Vitima> Vitimas { get; }
     DbSet<OcorrenciaViolenciaDomestica> OcorrenciasViolenciaDomestica { get; }
+
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

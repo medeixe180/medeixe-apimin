@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WHT6zaziJkBE3QWjLj3f9QpNFNbXvxz08visHzORqUVhP7W6DQ8WrO6I/XwKz2LeFjV5TQ3VXlweP88Zszvv5A==",
+  "dgSpecHash": "Eu7hrs/zh6CovY3ugWzgIaa4K5lXYYZ9lER4v5/LvYmlm29x0y2nvT9sHxg0TlVSfXbIIjw+CeStNi1tnIlOHQ==",
   "success": true,
   "projectFilePath": "/home/zeduardu/GithubProjects/medeixe-apimin/MedeixeApi/MedeixeApi.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "/home/zeduardu/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.15/microsoft.entityframeworkcore.abstractions.6.0.15.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.15/microsoft.entityframeworkcore.analyzers.6.0.15.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/microsoft.entityframeworkcore.design/6.0.15/microsoft.entityframeworkcore.design.6.0.15.nupkg.sha512",
+    "/home/zeduardu/.nuget/packages/microsoft.entityframeworkcore.inmemory/6.0.15/microsoft.entityframeworkcore.inmemory.6.0.15.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/microsoft.entityframeworkcore.relational/6.0.15/microsoft.entityframeworkcore.relational.6.0.15.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/microsoft.entityframeworkcore.sqlserver/6.0.15/microsoft.entityframeworkcore.sqlserver.6.0.15.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/microsoft.entityframeworkcore.tools/6.0.15/microsoft.entityframeworkcore.tools.6.0.15.nupkg.sha512",
