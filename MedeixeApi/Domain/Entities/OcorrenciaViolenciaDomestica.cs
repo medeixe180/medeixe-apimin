@@ -14,5 +14,5 @@ public class OcorrenciaViolenciaDomestica : BaseAuditableEntity
     public TipoAgressao TipoAgressao { get; set; }
     public NivelPrioridade NivelPrioridade { get; set; }
     public StatusAtendimento StatusAtendimento { get; set; }
-    public Vitima Vitima { get; set; }
+    public Vitima Vitima { get; set; } = null!;
 }

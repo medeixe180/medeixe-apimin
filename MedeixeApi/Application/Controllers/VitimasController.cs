@@ -40,21 +40,11 @@ public class VitimasController : ApiControllerBase
     }
 
     [HttpDelete("{id}")]
-<<<<<<< HEAD
-    public async Task<IActionResult> Delete(int id)
-    {
-        // var entity = await _dbSet.FindAsync(id);
-        // if (entity is null) return NotFound();
-        // _dbSet.Remove(entity);
-        // await Db.SaveChangesAsync();
-        return NoContent();
-=======
     public async Task<IActionResult> Delete(VitimaDelete model, int id)
     {
         if (id != model.Id)
             return BadRequest();
         await Mediator.Send(model);
         return Accepted();
->>>>>>> 3250c82 (feat: Adicinar casos de uso)
     }
 }
