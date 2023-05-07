@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Eu7hrs/zh6CovY3ugWzgIaa4K5lXYYZ9lER4v5/LvYmlm29x0y2nvT9sHxg0TlVSfXbIIjw+CeStNi1tnIlOHQ==",
+  "dgSpecHash": "l4tMR+hZVvfuagqKWrGiqsaKz+QEUTAV/CQXL+d8mHXIrK0WGyCKyWoqrjp29M1DfCl1wKQejio4AtQ9ueA/1A==",
   "success": true,
   "projectFilePath": "/home/zeduardu/GithubProjects/medeixe-apimin/MedeixeApi/MedeixeApi.csproj",
   "expectedPackageFiles": [
@@ -56,9 +56,7 @@
     "/home/zeduardu/.nuget/packages/system.security.permissions/4.7.0/system.security.permissions.4.7.0.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/system.text.encoding.codepages/4.7.0/system.text.encoding.codepages.4.7.0.nupkg.sha512",
-    "/home/zeduardu/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512",
-    "/home/zeduardu/.nuget/packages/microsoft.netcore.app.ref/6.0.14/microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
-    "/home/zeduardu/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.14/microsoft.netcore.app.host.linux-x64.6.0.14.nupkg.sha512"
+    "/home/zeduardu/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }
