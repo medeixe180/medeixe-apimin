@@ -2,8 +2,8 @@
 
 public enum NivelPrioridade
 {
-    Nenhum = 0,
-    Baixo = 1,
-    Médio = 2,
-    Alto = 3
+    Nenhuma = 0,
+    Baixa = 1,
+    Média = 2,
+    Alta = 3
 }
