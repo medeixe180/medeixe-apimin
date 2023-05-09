@@ -401,8 +401,8 @@ FodyWeavers.xsd
 
 ### DotnetCore ###
 # .NET Core build folders
-bin/
-obj/
+MedeixeApi/bin/
+MedeixeApi/obj/
 
 # Common node modules locations
 /node_modules
