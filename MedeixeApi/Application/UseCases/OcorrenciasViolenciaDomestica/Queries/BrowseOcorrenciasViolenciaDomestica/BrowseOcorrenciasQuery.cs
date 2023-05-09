@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Queries.BrowseOcorrenciasViolenciaDomestica
 {
-    public record BrowseOcorrenciasQuery : IRequest<OcorrenciasVm>;
+    public record BrowseOcorrenciasQuery : IRequest<List<OcorrenciaViolenciaDomestica>>;
 
-    public class BrowseOcorrenciasQueryHandler : IRequestHandler<BrowseOcorrenciasQuery, OcorrenciasVm>
+    public class BrowseOcorrenciasQueryHandler : IRequestHandler<BrowseOcorrenciasQuery, List<OcorrenciaViolenciaDomestica>>
     {
         private readonly IApplicationDbContext _context;
         private readonly IMapper _mapper;
@@ -20,14 +20,19 @@ namespace MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Queries.
             _mapper = mapper;
         }
 
-        public async Task<OcorrenciasVm> Handle(BrowseOcorrenciasQuery request, CancellationToken cancellationToken)
+        public async Task<List<OcorrenciaViolenciaDomestica>> Handle(BrowseOcorrenciasQuery request, CancellationToken cancellationToken)
         {
-            return new OcorrenciasVm {
-                Ocorrencias = await _context.OcorrenciasViolenciaDomestica
-                    .AsNoTracking()
-                    .ProjectTo<OcorrenciaDto>(_mapper.ConfigurationProvider)
-                    .ToListAsync(cancellationToken)
-            };
+            return await _context.OcorrenciasViolenciaDomestica
+                .AsNoTracking()
+                .ToListAsync(cancellationToken);
+
+            // return new OcorrenciasVm 
+            // {
+            //     Ocorrencias = await _context.OcorrenciasViolenciaDomestica
+            //         .AsNoTracking()
+            //         .ProjectTo<OcorrenciaDto>(_mapper.ConfigurationProvider)
+            //         .ToListAsync(cancellationToken)
+            // };
         }
     }
 }

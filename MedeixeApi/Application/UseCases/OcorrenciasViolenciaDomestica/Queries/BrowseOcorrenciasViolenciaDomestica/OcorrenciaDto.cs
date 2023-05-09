@@ -1,3 +1,4 @@
+using AutoMapper;
 using MedeixeApi.Application.Common.Mappings;
 using MedeixeApi.Domain.Entities;
 
@@ -7,9 +8,6 @@ namespace MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Queries.
     {
         public OcorrenciaDto()
         {
-            TipoAgressao = new TipoAgressaoDto();
-            NivelPrioridade = new NivelPrioridadeDto();
-            StatusAtendimento = new StatusAtendimentoDto();
             Vitima = new VitimaDto();
         }
 
@@ -20,10 +18,20 @@ namespace MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Queries.
         public float Latitude { get; set; }
         public float Longititude { get; set; }
         public string? DescricaoCaso { get; set; }
-        public TipoAgressaoDto TipoAgressao { get; set; }
-        public NivelPrioridadeDto NivelPrioridade { get; set; }
-        public StatusAtendimentoDto StatusAtendimento { get; set; }
+        public int TipoAgressao { get; set; }
+        public int NivelPrioridade { get; set; }
+        public int StatusAtendimento { get; set; }
         public VitimaDto Vitima { get; set; }
-
+        public DateTime Created { get; set; }
+        public string? CreatedBy { get; set; }
+        public DateTime? LastModified { get; set; }
+        public string? LastModifiedBy { get; set; }
+        public void Mapping(Profile profile)
+        {
+            profile.CreateMap<OcorrenciaViolenciaDomestica, OcorrenciaDto>()
+                .ForMember(d => d.TipoAgressao, opt => opt.MapFrom(s => (int)s.TipoAgressao))
+                .ForMember(d => d.NivelPrioridade, opt => opt.MapFrom(s => (int)s.NivelPrioridade))
+                .ForMember(d => d.StatusAtendimento, opt => opt.MapFrom(s => (int)s.StatusAtendimento));
+        }
     }
 }

@@ -1,5 +1,6 @@
 using MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Actions;
 using MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Queries.BrowseOcorrenciasViolenciaDomestica;
+using MedeixeApi.Domain.Entities;
 using MedeixeApi.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +13,7 @@ public class OcorrenciasViolenciaDomesticaController : ApiControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<OcorrenciasVm>> Browse()
+    public async Task<ActionResult<List<OcorrenciaViolenciaDomestica>>> Browse()
     {
         return await Mediator.Send(new BrowseOcorrenciasQuery());
     }
