@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "4RzH5hw6sjnd4AindFshTsM/4DyRX4w9fBrY1AuFAk0tO93WBOW6yxk0OwsuTy5NJh8Xfg0L3SeG4bvFzEm37Q==",
+  "dgSpecHash": "Z/XraEtjEfn3nyeQm3F1tofGKh5EP9jVqwL7vd7DGnNhr/7nSOdJ63m1aGccnCXPhr/pTOM1C5Ex9p+fA0QQNQ==",
   "success": true,
   "projectFilePath": "/home/zeduardu/GithubProjects/medeixe-apimin/MedeixeApi/MedeixeApi.csproj",
   "expectedPackageFiles": [
     "/home/zeduardu/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/home/zeduardu/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/mediatr/12.0.1/mediatr.12.0.1.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
@@ -57,8 +58,6 @@
     "/home/zeduardu/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/system.text.encoding.codepages/4.7.0/system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512",
-    "/home/zeduardu/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/6.0.16/microsoft.netcore.app.runtime.linux-x64.6.0.16.nupkg.sha512",
-    "/home/zeduardu/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/6.0.16/microsoft.aspnetcore.app.runtime.linux-x64.6.0.16.nupkg.sha512",
     "/home/zeduardu/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.16/microsoft.netcore.app.host.linux-x64.6.0.16.nupkg.sha512"
   ],
   "logs": []
