@@ -1,4 +1,6 @@
+using medeixeApi.Application.DTO.VitimaDtos;
 using MedeixeApi.Application.UseCases.Vitimas.Actions;
+using MedeixeApi.Application.UseCases.Vitimas.Queries.BrowseVitimas;
 using MedeixeApi.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,21 +13,19 @@ public class VitimasController : ApiControllerBase
     }
     
     [HttpGet]
-    public async Task<List<int>> Browse()
+    public async Task<List<VitimaQueryDto>> Browse()
     {
-        return new List<int>{};
+        return await Mediator.Send(new BrowseVitimasQuery());
     }
 
     [HttpGet("{id}")]
     public async Task<ActionResult> Read(int id)
     {
-        // var entity = await _dbSet.FindAsync(id);
-        // if (entity != null) return entity;
         return NotFound();
     }
     
     [HttpPost]
-    public async Task<ActionResult<int>> AddTest(VitimaAdd vitimaAdd)
+    public async Task<ActionResult<int>> Add(VitimaAdd vitimaAdd)
     {
         return await Mediator.Send(vitimaAdd);
     }
