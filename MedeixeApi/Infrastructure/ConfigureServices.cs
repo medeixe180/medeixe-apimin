@@ -17,9 +17,7 @@ public static class ConfigureServices
         }
         else
         {
-            var conStrBuilder = new SqlConnectionStringBuilder(configuration.GetConnectionString("DefaultConnection"));
-            conStrBuilder.Password = configuration["DbPassword"];
-            string connectionString = conStrBuilder.ConnectionString;
+            string connectionString = configuration.GetConnectionString("DefaultConnection") + $";Password={Environment.GetEnvironmentVariable("DB_PASSWORD")}";
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString, builder => builder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
         }
 

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "commit": "cz"
   },
   "author": "Zeduardu",
   "license": "ISC",
