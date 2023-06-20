@@ -4,6 +4,7 @@ using MedeixeApi.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MedeixeApi.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230620121806_NewTablesAndModeling")]
+    partial class NewTablesAndModeling
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,10 +79,10 @@ namespace MedeixeApi.Infrastructure.Persistence.Migrations
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DataHoraAtendimento")
+                    b.Property<DateTime>("DataHoraAtendimento")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("DataHoraFinalizacao")
+                    b.Property<DateTime>("DataHoraFinalizacao")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataHoraRegistro")

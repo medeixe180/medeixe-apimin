@@ -15,5 +15,5 @@ public class Vitima : BaseAuditableEntity
     public string? Email { get; set; }
     public string? ContatoEmergencia { get; set; }
     public bool MedidaProtetiva { get; set; }
-    public List<OcorrenciaViolenciaDomestica>? Ocorrencias { get; set; }
+    public List<Ocorrencia>? Ocorrencias { get; set; }
 }

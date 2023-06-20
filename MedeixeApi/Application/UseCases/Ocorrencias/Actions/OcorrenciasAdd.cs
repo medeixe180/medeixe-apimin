@@ -5,15 +5,15 @@ using MediatR;
 
 namespace MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Actions;
 
-public record OcorrenciaViolenciaDomesticaAdd : IRequest<int>
+public record OcorrenciasAdd : IRequest<int>
 {
     public float Latitude { get; set; }
     public float Longititude { get; set; }
-    public TipoAgressao TipoAgressao { get; set; }
+    public int TipoViolenciaId { get; set; }
     public int VitimaId { get; set; }
 }
 
-public class OcorrenciaViolenciaDomesticaAddUseCase : IRequestHandler<OcorrenciaViolenciaDomesticaAdd, int>
+public class OcorrenciaViolenciaDomesticaAddUseCase : IRequestHandler<OcorrenciasAdd, int>
 {
     private readonly IApplicationDbContext _context;
 
@@ -22,27 +22,27 @@ public class OcorrenciaViolenciaDomesticaAddUseCase : IRequestHandler<Ocorrencia
         _context = context;
     }
 
-    public async Task<int> Handle(OcorrenciaViolenciaDomesticaAdd request, CancellationToken cancellationToken)
+    public async Task<int> Handle(OcorrenciasAdd request, CancellationToken cancellationToken)
     {
-        var entity = new OcorrenciaViolenciaDomestica
+        var entity = new Ocorrencia
         {
             DataHoraRegistro = DateTime.Now,
-            DataHoraAtendimento = DateTime.Now,
-            DataHoraFinalizacao = DateTime.Now,
+            DataHoraAtendimento = null,
+            DataHoraFinalizacao = null,
             Latitude = request.Latitude,
             Longititude = request.Longititude,
             DescricaoCaso = null,
-            TipoAgressao = request.TipoAgressao,
+            TipoViolencia = _context.TiposViolencia.Find(request.TipoViolenciaId)!,
             NivelPrioridade = NivelPrioridade.Nenhuma,
-            StatusAtendimento = StatusAtendimento.AguardandoAtendimento,
-            Vitima = _context.Vitimas.Find(request.VitimaId),
+            Vitima = _context.Vitimas.Find(request.VitimaId)!,
             Created = DateTime.Now,
             CreatedBy = null,
             LastModified = DateTime.Now,
-            LastModifiedBy = null
+            LastModifiedBy = null,
+            Movimentacoes = null,
         };
 
-        _context.OcorrenciasViolenciaDomestica.Add(entity);
+        _context.Ocorrencias.Add(entity);
         await _context.SaveChangesAsync(cancellationToken);
         return entity.Id;
     }

@@ -3,23 +3,23 @@ using MediatR;
 
 namespace MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Actions;
 
-public record OcorrenciaViolenciaDomesticaDelete : IRequest
+public record OcorrenciasDelete : IRequest
 {
     public int Id { get; set; }
 }
 
-class OcorrenciaViolenciaDomesticaDeleteUseCase : IRequestHandler<OcorrenciaViolenciaDomesticaDelete>
+class OcorrenciaViolenciaDomesticaDeleteUseCase : IRequestHandler<OcorrenciasDelete>
 {
     private readonly IApplicationDbContext _context;
     public OcorrenciaViolenciaDomesticaDeleteUseCase(IApplicationDbContext context)
     {
         _context = context;
     }
-    public async Task Handle(OcorrenciaViolenciaDomesticaDelete request, CancellationToken cancellationToken)
+    public async Task Handle(OcorrenciasDelete request, CancellationToken cancellationToken)
     {
-        var entity = await _context.OcorrenciasViolenciaDomestica.FindAsync(request.Id);
+        var entity = await _context.Ocorrencias.FindAsync(request.Id);
         if (entity != null)
-            _context.OcorrenciasViolenciaDomestica.Remove(entity);
+            _context.Ocorrencias.Remove(entity);
         await _context.SaveChangesAsync(cancellationToken);
     }
 }

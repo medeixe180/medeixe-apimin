@@ -18,11 +18,11 @@ public class VitimasController : ApiControllerBase
         return await Mediator.Send(new BrowseVitimasQuery());
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult> Read(int id)
-    {
-        return NotFound();
-    }
+    // [HttpGet("{id}")]
+    // public async Task<ActionResult> Read(int id)
+    // {
+    //     return NotFound();
+    // }
     
     [HttpPost]
     public async Task<ActionResult<int>> Add(VitimaAdd vitimaAdd)
