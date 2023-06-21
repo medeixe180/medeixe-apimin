@@ -13,7 +13,7 @@ public class VitimasController : ApiControllerBase
     }
     
     [HttpGet]
-    public async Task<List<VitimaQueryDto>> Browse()
+    public async Task<VitimasVm> Browse()
     {
         return await Mediator.Send(new BrowseVitimasQuery());
     }
