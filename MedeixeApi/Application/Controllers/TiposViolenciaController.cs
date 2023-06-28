@@ -8,10 +8,6 @@ namespace MedeixeApi.Application.Controllers;
 
 public class TiposViolenciaController : ApiControllerBase
 {
-    public TiposViolenciaController(ApplicationDbContext db) : base(db)
-    {
-    }
-    
     [HttpGet]
     public async Task<List<TiposViolenciaDto>> Browse()
     {

@@ -27,11 +27,8 @@ public class OcorrenciaViolenciaDomesticaAddUseCase : IRequestHandler<Ocorrencia
         var entity = new Ocorrencia
         {
             DataHoraRegistro = DateTime.Now,
-            DataHoraAtendimento = null,
-            DataHoraFinalizacao = null,
             Latitude = request.Latitude,
             Longititude = request.Longititude,
-            DescricaoCaso = null,
             TipoViolencia = _context.TiposViolencia.Find(request.TipoViolenciaId)!,
             NivelPrioridade = NivelPrioridade.Nenhuma,
             Vitima = _context.Vitimas.Find(request.VitimaId)!,

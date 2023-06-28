@@ -10,6 +10,7 @@ public interface IApplicationDbContext
     DbSet<TipoViolencia> TiposViolencia { get; }
     DbSet<Movimentacao> Movimentacoes { get; }
     DbSet<Usuario> Usuarios { get; }
+    DbSet<Status> Status { get; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

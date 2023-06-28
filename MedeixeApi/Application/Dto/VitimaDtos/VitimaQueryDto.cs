@@ -20,7 +20,7 @@ namespace medeixeApi.Application.DTO.VitimaDtos
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Vitima, VitimaQueryDto>()
-                .ForMember(d => d.Genero, opt => opt.MapFrom(s => (int)s.Genero));
+                .ForMember(d => d.Genero, opt => opt.MapFrom(s => (int)s.IdentidadeGenero));
         }
     }
 }

@@ -9,9 +9,7 @@ namespace MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Actions;
 public record OcorrenciasEdit : IRequest<Unit>
 {
     public int Id { get; set; }
-    public string? DescricaoCaso { get; set; }
     public NivelPrioridade NivelPrioridade { get; set; }
-    public StatusAtendimento StatusAtendimento { get; set; }
     public int TipoViolenciaId { get; set; }
 }
 
@@ -32,10 +30,6 @@ public class OcorrenciaEditUseCase : IRequestHandler<OcorrenciasEdit, Unit>
         {
             throw new NotFoundException(nameof(Ocorrencia), request.Id);
         }
-
-        entity.DataHoraAtendimento = request.StatusAtendimento == StatusAtendimento.Atendendo ? DateTime.Now : null;
-        entity.DataHoraFinalizacao = request.StatusAtendimento == StatusAtendimento.Atendido ? DateTime.Now : null;
-        entity.DescricaoCaso = request.DescricaoCaso;
         entity.NivelPrioridade = request.NivelPrioridade;
         entity.TipoViolencia = _context.TiposViolencia.Find(request.TipoViolenciaId)!;
 

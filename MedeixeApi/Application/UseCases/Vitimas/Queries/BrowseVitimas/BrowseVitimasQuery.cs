@@ -26,8 +26,8 @@ namespace MedeixeApi.Application.UseCases.Vitimas.Queries.BrowseVitimas
         {
             return new VitimasVm
             {
-                Generos = Enum.GetValues(typeof(Genero))
-                    .Cast<Genero>()
+                Generos = Enum.GetValues(typeof(IdentidadeGenero))
+                    .Cast<IdentidadeGenero>()
                     .Select(g => new GeneroDto
                     {
                         Value = (int)g,

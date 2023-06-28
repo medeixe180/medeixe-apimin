@@ -8,7 +8,7 @@ public class Vitima : BaseAuditableEntity
 {
     public string? Nome { get; set; }
     public int? Idade { get; set; }
-    public Genero Genero { get; set; }
+    public IdentidadeGenero IdentidadeGenero { get; set; }
     public string? Endereco { get; set; }
     public string? NumeroTelefone { get; set; }
     [EmailAddress]

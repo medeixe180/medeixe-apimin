@@ -21,6 +21,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     public DbSet<TipoViolencia> TiposViolencia => Set<TipoViolencia>();
     public DbSet<Movimentacao> Movimentacoes => Set<Movimentacao>();
     public DbSet<Usuario> Usuarios => Set<Usuario>();
+    public DbSet<Status> Status => Set<Status>();
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
     {

@@ -11,7 +11,7 @@ public record VitimaEdit : IRequest<Vitima>
     public int Id { get; set; }
     public string? Nome { get; init; }
     public int? Idade { get; init; }
-    public Genero Genero { get; init; }
+    public IdentidadeGenero IdentidadeGenero { get; init; }
     public string? Endereco { get; init; }
     public string? NumeroTelefone { get; init; }
     public string? Email { get; init; }
@@ -35,7 +35,7 @@ public class VitimaEditUseCase : IRequestHandler<VitimaEdit, Vitima>
             throw new NotFoundException(nameof(Vitima), request.Id);
         entity.Nome = request.Nome;
         entity.Idade = request.Idade;
-        entity.Genero = request.Genero;
+        entity.IdentidadeGenero = request.IdentidadeGenero;
         entity.Endereco = request.Endereco;
         entity.NumeroTelefone = request.NumeroTelefone;
         entity.Email = request.Email;

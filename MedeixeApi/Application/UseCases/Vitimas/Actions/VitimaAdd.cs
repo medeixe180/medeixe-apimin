@@ -9,7 +9,7 @@ public record VitimaAdd : IRequest<int>
 {
     public string? Nome { get; init; }
     public int? Idade { get; init; }
-    public Genero Genero { get; init; }
+    public IdentidadeGenero IdentidadeGenero { get; init; }
     public string? Endereco { get; init; }
     public string? NumeroTelefone { get; init; }
     public string? Email { get; init; }
@@ -32,7 +32,7 @@ public class VitimaAddUseCase : IRequestHandler<VitimaAdd, int>
         {
             Nome = request.Nome,
             Idade = request.Idade,
-            Genero = request.Genero,
+            IdentidadeGenero = request.IdentidadeGenero,
             Endereco = request.Endereco,
             NumeroTelefone = request.NumeroTelefone,
             Email = request.Email,

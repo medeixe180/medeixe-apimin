@@ -8,10 +8,6 @@ namespace MedeixeApi.Application.Controllers;
 
 public class VitimasController : ApiControllerBase
 {
-    public VitimasController(ApplicationDbContext db) : base(db)
-    {
-    }
-    
     [HttpGet]
     public async Task<VitimasVm> Browse()
     {
