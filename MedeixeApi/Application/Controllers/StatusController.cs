@@ -1,5 +1,6 @@
-using MedeixeApi.Application.Dto;
 using MedeixeApi.Application.UseCases;
+using MedeixeApi.Application.UseCases.Statuses.Actions;
+using MedeixeApi.Application.UseCases.Statuses.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedeixeApi.Application.Controllers;

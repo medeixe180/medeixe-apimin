@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using MedeixeApi.Domain.Common;
 using medeixeApi.Domain.Enums;
 
@@ -5,9 +6,13 @@ namespace MedeixeApi.Domain.Entities;
 
 public class Usuario : BaseAuditableEntity
 {
-    public string Cpf { get; set; } = null!;
     public string Nome { get; set; } = null!;
-    public string Senha { get; set; } = null!;
-    public TipoUsuario Tipo { get; set; }
-    public List<Movimentacao>? Movimentacoes { get; set; }
+    public DateTime? DataNascimento { get; set; }
+    public string? Endereco { get; set; }
+    public string? NumeroTelefone { get; set; }
+    [EmailAddress]
+    public string Email { get; set; } = null!;
+    public bool MedidaProtetiva { get; set; }
+    public TipoUsuario TipoUsuario { get; set; }
+    public List<Ocorrencia>? Ocorrencias { get; set; }
 }

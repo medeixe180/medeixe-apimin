@@ -2,7 +2,6 @@ namespace medeixeApi.Domain.Enums;
 
 public enum TipoUsuario
 {
-    Atendente = 1,
-    Despachante = 2,
-    Administrador = 3
+    Vítima = 1,
+    Denunciante = 2,
 }

@@ -1,7 +1,5 @@
 using AutoMapper;
 using MedeixeApi.Application.Common.Interfaces;
-using MedeixeApi.Application.DTO.TiposViolenciaDtos;
-using medeixeApi.Application.DTO.VitimaDtos;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

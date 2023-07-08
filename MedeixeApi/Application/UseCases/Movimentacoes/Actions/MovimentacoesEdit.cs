@@ -27,7 +27,7 @@ public class MovimentacoesEditUseCase : IRequestHandler<MovimentacoesEdit, int>
             DataHora = DateTime.Now,
             Status = _context.Status.Find(request.StatusId)!,
             Ocorrencia = _context.Ocorrencias.Find(request.OcorrenciaId)!,
-            Usuario = _context.Usuarios.Find(request.UsuarioId)!,
+            Atendente = _context.Atendentes.Find(request.UsuarioId)!,
             Created = DateTime.Now,
             CreatedBy = null,
             LastModified = DateTime.Now,

@@ -4,12 +4,11 @@ using medeixeApi.Domain.Enums;
 using MediatR;
 using MedeixeApi.Domain.Entities;
 
-namespace MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Actions;
+namespace MedeixeApi.Application.UseCases.Ocorrencias.Actions;
 
 public record OcorrenciasEdit : IRequest<Unit>
 {
     public int Id { get; set; }
-    public NivelPrioridade NivelPrioridade { get; set; }
     public int TipoViolenciaId { get; set; }
 }
 
@@ -30,7 +29,7 @@ public class OcorrenciaEditUseCase : IRequestHandler<OcorrenciasEdit, Unit>
         {
             throw new NotFoundException(nameof(Ocorrencia), request.Id);
         }
-        entity.NivelPrioridade = request.NivelPrioridade;
+
         entity.TipoViolencia = _context.TiposViolencia.Find(request.TipoViolenciaId)!;
 
         await _context.SaveChangesAsync(cancellationToken);

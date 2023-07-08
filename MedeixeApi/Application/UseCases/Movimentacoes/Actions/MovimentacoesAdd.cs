@@ -7,7 +7,7 @@ namespace MedeixeApi.Application.UseCases.Movimentacoes.Actions;
 public record MovimentacoesAdd : IRequest<int>
 {
     public Ocorrencia Ocorrencia { get; set; } = null!;
-    public Usuario Usuario { get; set; } = null!;
+    public Atendente Atendente { get; set; } = null!;
 }
 
 public class MovimentacoesAddUseCase : IRequestHandler<MovimentacoesAdd, int>
@@ -26,7 +26,7 @@ public class MovimentacoesAddUseCase : IRequestHandler<MovimentacoesAdd, int>
             DataHora = DateTime.Now,
             Status = _context.Status.Where(t => t.StatusInicial == true).FirstOrDefault()!,
             Ocorrencia = _context.Ocorrencias.Find(request.Ocorrencia.Id)!,
-            Usuario = null,
+            Atendente = null,
             Created = DateTime.Now,
             CreatedBy = null,
             LastModified = DateTime.Now,

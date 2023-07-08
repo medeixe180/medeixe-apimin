@@ -1,9 +1,9 @@
 using MedeixeApi.Application.Common.Interfaces;
 using MedeixeApi.Domain.Entities;
-using medeixeApi.Domain.Enums;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
-namespace MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Actions;
+namespace MedeixeApi.Application.UseCases.Ocorrencias.Actions;
 
 public record OcorrenciasAdd : IRequest<int>
 {
@@ -24,23 +24,36 @@ public class OcorrenciaViolenciaDomesticaAddUseCase : IRequestHandler<Ocorrencia
 
     public async Task<int> Handle(OcorrenciasAdd request, CancellationToken cancellationToken)
     {
-        var entity = new Ocorrencia
+        var entityOcorrencia = new Ocorrencia
         {
             DataHoraRegistro = DateTime.Now,
             Latitude = request.Latitude,
             Longititude = request.Longititude,
             TipoViolencia = _context.TiposViolencia.Find(request.TipoViolenciaId)!,
-            NivelPrioridade = NivelPrioridade.Nenhuma,
-            Vitima = _context.Vitimas.Find(request.VitimaId)!,
+            Usuario = _context.Usuarios.Find(request.VitimaId)!,
             Created = DateTime.Now,
             CreatedBy = null,
             LastModified = DateTime.Now,
             LastModifiedBy = null,
             Movimentacoes = null,
         };
+        
+        var entityMovimentacao = new Movimentacao
+        {
+            Atendente = null,
+            DataHora = DateTime.Now,
+            Ocorrencia = entityOcorrencia,
+            Status = _context.Status.Where(s => s.StatusInicial == true).FirstOrDefault()!,
+            Created = DateTime.Now,
+            CreatedBy = null,
+            LastModified = DateTime.Now,
+            LastModifiedBy = null,
+        };
 
-        _context.Ocorrencias.Add(entity);
+        _context.Ocorrencias.Add(entityOcorrencia);
+        _context.Movimentacoes.Add(entityMovimentacao);
         await _context.SaveChangesAsync(cancellationToken);
-        return entity.Id;
+        
+        return entityOcorrencia.Id;
     }
 }

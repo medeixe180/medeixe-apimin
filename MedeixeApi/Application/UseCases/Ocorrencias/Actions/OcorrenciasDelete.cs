@@ -1,7 +1,7 @@
 using MedeixeApi.Application.Common.Interfaces;
 using MediatR;
 
-namespace MedeixeApi.Application.UseCases.OcorrenciasViolenciaDomestica.Actions;
+namespace MedeixeApi.Application.UseCases.Ocorrencias.Actions;
 
 public record OcorrenciasDelete : IRequest
 {
