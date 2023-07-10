@@ -1,28 +1,89 @@
-@startuml
-class Vitima {
-  -nome: string
-  -idade: int
-  -genero: string
-  -endereco: string
-  -numeroTelefone: string
-  -email: string
-  -contatoEmergencia: string
-  -medidaProtetiva: boolean
+@startuml Diagrama de Classes do Me Deixe
+
+class BaseEntity
+{
+  -id: int
 }
 
-class OcorrenciaViolenciaDomestica {
-  -dataHoraRegistro: DateTime
-  -dataHoraAtendimento: DateTime
-  -dataHoraFinalizacao: DateTime
-  -latitude: float
-  -longitude: float
-  -descricaoCaso: string
-  -tipoAgressao: int
-  -nivelPrioridade: int
-  -statusAtendimento: int
-  -numeroViatura: string
+class BaseAuditableEntity extends BaseEntity
+{
+  -created: DateTime
+  -CreatedBy: string
+  -LastModified: DateTime
+  -LastModifiedBy: string
 }
 
-Vitima "1..*" -- "1" OcorrenciaViolenciaDomestica : registra >
+package Entidades <<Rectangle>>
+{
+  class Atendente <extends BaseAuditableEntity>
+  {
+    -cpf: string
+    -nome: string
+    -senha: string
+    -tipoAtendente: TipoAtendente
+    -movimentacoes: List<Movimentacao>
+  }
 
+  class Movimentacao <extends BaseAuditableEntity>
+  {
+    -dataHora: DateTime
+    -status: Status
+    -ocorrencia: Ocorrencia
+    -atendente: Atendente
+  }
+
+  class Ocorrencia <extends BaseAuditableEntity>
+  {
+    -dataHoraRegistro: DateTime
+    -latitude: float
+    -longitude: float
+    -usuario: Usuario
+    -TipoViolencia: TipoViolencia
+    -movimentacoes: List<Movimentacao>
+  }
+
+  class Status <extends BaseAuditableEntity>
+  {
+    -descricao: string
+    -statusInicial: bool
+    -movimentacoes: List<Movimentacao>
+  }
+
+  class TipoViolencia <extends BaseAuditableEntity>
+  {
+    -descricao: string
+    -ocorrencias: List<Ocorrencia>
+  }
+
+  class Usuario <extends BaseAuditableEntity>
+  {
+    -nome: string
+    -dataNascimento: DateTime
+    -endereco: string
+    -numeroTelefone: string
+    -email: string
+    -medidaProtetiva: bool
+    -tipoUsuario: TipoUsuario
+    -ocorrencias: List<Ocorrencia>
+  }
+
+  enum TipoAtendente
+  {
+    -descricao: string
+  }
+
+  enum TipoUsuario
+  {
+    -descricao: string
+  }
+
+  TipoAtendente -- Atendente
+  Ocorrencia "1 .. n" -left-> "0 .. n" Atendente : acompanha
+  (Atendente, Ocorrencia) .. Movimentacao : faz
+  Ocorrencia "0 .. n" <-left- "1 .. 1" Usuario : registra
+  Ocorrencia "0 .. n" -up-> "1 .. 1" TipoViolencia : tem
+  Movimentacao "1 .. 1" --> "1 .. n" Status : possui
+  Usuario -- TipoUsuario
+}
+Entidades -left-|> BaseAuditableEntity
 @enduml

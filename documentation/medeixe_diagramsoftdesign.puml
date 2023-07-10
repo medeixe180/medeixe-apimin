@@ -1,0 +1,30 @@
+@startuml API Design
+
+node "Interface (WebUI)" {
+    node Controler1
+    node Controler2
+    node Controler3
+}
+node Mediator
+node "Casos de uso (Application)" {
+    node Actions
+    node Queries
+}
+node "Persistência (Infrastructure)"{
+    node Repositório
+}
+database Database
+
+Controler1 <--> Mediator
+Controler2 <--> Mediator
+Controler3 <--> Mediator
+Mediator <~~> Actions
+Mediator <~~> Queries
+Actions <--> Repositório
+Queries <--> Repositório
+Repositório <--> Database
+
+
+
+hide members
+hide circle

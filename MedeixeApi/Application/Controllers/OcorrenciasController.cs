@@ -11,7 +11,8 @@ public class OcorrenciasController : ApiControllerBase
     [HttpGet]
     public async Task<ActionResult<List<OcorrenciaDto>>> Browse()
     {
-        return Ok(await Mediator.Send(new OcorrenciasBrowse()));
+        var ocorrencias = await Mediator.Send(new OcorrenciasBrowse());
+        return Ok(ocorrencias);
     }
 
     [HttpPost]
