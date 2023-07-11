@@ -4,5 +4,6 @@ public enum TipoAtendente
 {
     Atendente = 1,
     Despachante = 2,
-    Administrador = 3
+    Administrador = 3,
+    Sistema = 4
 }

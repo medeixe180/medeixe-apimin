@@ -2,7 +2,7 @@ using AutoMapper;
 using MedeixeApi.Application.Common.Mappings;
 using MedeixeApi.Domain.Entities;
 
-namespace MedeixeApi.Application.UseCases.Ocorrencias.Queries
+namespace MedeixeApi.Application.Dto.UsuarioDtos
 {
     public class UsuarioBriefDto : IMapFrom<Usuario>
     {

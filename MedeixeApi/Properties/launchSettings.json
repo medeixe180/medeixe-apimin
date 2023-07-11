@@ -12,7 +12,7 @@
     "MedeixeApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7196;http://localhost:5066",
       "environmentVariables": {

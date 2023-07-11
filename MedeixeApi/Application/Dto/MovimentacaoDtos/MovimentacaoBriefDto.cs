@@ -1,8 +1,9 @@
 using MedeixeApi.Application.Common.Mappings;
-using MedeixeApi.Application.UseCases.Statuses.Queries;
+using MedeixeApi.Application.Dto.AtendenteDtos;
+using MedeixeApi.Application.Dto.StatusDtos;
 using MedeixeApi.Domain.Entities;
 
-namespace MedeixeApi.Application.UseCases.Ocorrencias.Queries;
+namespace MedeixeApi.Application.Dto.MovimentacaoDtos;
 
 public class MovimentacaoBriefDto : IMapFrom<Movimentacao>
 {

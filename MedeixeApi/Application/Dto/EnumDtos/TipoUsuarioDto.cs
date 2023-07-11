@@ -1,4 +1,4 @@
-namespace MedeixeApi.Application.UseCases.Usuarios.Queries
+namespace MedeixeApi.Application.Dto.EnumDtos
 {
     public class TipoUsuarioDto
     {

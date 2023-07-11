@@ -1,4 +1,4 @@
-namespace MedeixeApi.Application.UseCases.Atendentes.Queries;
+namespace MedeixeApi.Application.Dto.EnumDtos;
 
 public class TipoAtendenteDto
 {

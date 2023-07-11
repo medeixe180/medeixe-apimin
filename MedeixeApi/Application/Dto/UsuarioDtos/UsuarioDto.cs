@@ -1,9 +1,10 @@
 using AutoMapper;
 using MedeixeApi.Application.Common.Mappings;
+using MedeixeApi.Application.Dto.OcorrenciaDtos;
 using MedeixeApi.Application.UseCases.Ocorrencias.Queries;
 using MedeixeApi.Domain.Entities;
 
-namespace MedeixeApi.Application.UseCases.Usuarios.Queries
+namespace MedeixeApi.Application.Dto.UsuarioDtos
 {
     public class UsuarioDto : IMapFrom<Usuario>
     {
@@ -14,7 +15,7 @@ namespace MedeixeApi.Application.UseCases.Usuarios.Queries
         public string? NumeroTelefone { get; set; }
         public string? Email { get; set; }
         public bool MedidaProtetiva { get; set; }
-        public List<OcorrenciaDto>? Ocorrencias { get; set; }
+        public List<OcorrenciaBriefDto>? Ocorrencias { get; set; }
 
         public void Mapping(Profile profile)
         {

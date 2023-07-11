@@ -1,6 +1,7 @@
+using MedeixeApi.Application.Dto.MovimentacaoDtos;
+using MedeixeApi.Application.Dto.StatusDto;
 using MedeixeApi.Application.UseCases.Movimentacoes.Actions;
 using MedeixeApi.Application.UseCases.Movimentacoes.Queries;
-using MedeixeApi.Application.UseCases.Statuses.Queries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedeixeApi.Application.Controllers;
@@ -22,7 +23,7 @@ public class MovimentacoesController : ApiControllerBase
         return await Mediator.Send(command);
     }
     
-    [HttpGet("ocorrencia/{id}/movimentacoes")]
+    [HttpGet("ocorrencia/{id}")]
     public async Task<ActionResult<List<MovimentacaoDto>>> MovimentacoesByOcorrenciaBrowse(int id)
     {
         var movimentacoes = await Mediator.Send(new MovimentacoesByOcorrenciaBrowse { OcorrenciaId = id });

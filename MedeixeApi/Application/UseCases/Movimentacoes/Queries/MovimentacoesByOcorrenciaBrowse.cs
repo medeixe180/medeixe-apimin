@@ -1,6 +1,7 @@
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MedeixeApi.Application.Common.Interfaces;
+using MedeixeApi.Application.Dto.MovimentacaoDtos;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

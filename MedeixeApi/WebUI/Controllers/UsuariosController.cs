@@ -1,6 +1,5 @@
 using MedeixeApi.Application.UseCases.Usuarios.Queries;
 using MedeixeApi.Application.UseCases.Usuarios.Actions;
-using MedeixeApi.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedeixeApi.Application.Controllers;

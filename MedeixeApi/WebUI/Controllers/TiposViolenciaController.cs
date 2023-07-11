@@ -1,7 +1,7 @@
+using MedeixeApi.Application.Dto.TiposViolenciaDtos;
 using MedeixeApi.Application.UseCases.TiposViolencia.Actions;
 using MedeixeApi.Application.UseCases.TiposViolencia.Queries;
 using MedeixeApi.Application.UseCases.TiposViolencia.Queries.TiposViolenciaBrowse;
-using MedeixeApi.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedeixeApi.Application.Controllers;

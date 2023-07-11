@@ -1,6 +1,7 @@
 using AutoMapper;
 using MedeixeApi.Application.Common.Exceptions;
 using MedeixeApi.Application.Common.Interfaces;
+using MedeixeApi.Application.Dto.StatusDto;
 using MedeixeApi.Domain.Entities;
 using MediatR;
 

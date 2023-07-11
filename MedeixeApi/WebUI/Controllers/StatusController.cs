@@ -1,4 +1,4 @@
-using MedeixeApi.Application.UseCases;
+using MedeixeApi.Application.Dto.StatusDto;
 using MedeixeApi.Application.UseCases.Statuses.Actions;
 using MedeixeApi.Application.UseCases.Statuses.Queries;
 using Microsoft.AspNetCore.Mvc;

@@ -1,3 +1,4 @@
+using MedeixeApi.Application.Dto.OcorrenciaDtos;
 using MedeixeApi.Application.UseCases.Movimentacoes.Actions;
 using MedeixeApi.Application.UseCases.Ocorrencias.Actions;
 using MedeixeApi.Application.UseCases.Ocorrencias.Queries;

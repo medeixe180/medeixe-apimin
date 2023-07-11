@@ -1,10 +1,11 @@
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MedeixeApi.Application.Common.Interfaces;
-using MedeixeApi.Application.DTO.Enums;
 using medeixeApi.Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using MedeixeApi.Application.Dto.EnumDtos;
+using MedeixeApi.Application.Dto.UsuarioDtos;
 
 namespace MedeixeApi.Application.UseCases.Usuarios.Queries
 {

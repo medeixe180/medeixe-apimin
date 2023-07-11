@@ -1,7 +1,5 @@
-using MedeixeApi.Application.UseCases;
 using MedeixeApi.Application.UseCases.Atendentes.Actions;
 using MedeixeApi.Application.UseCases.Atendentes.Queries;
-using MedeixeApi.Application.UseCases.Usuarios.Actions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

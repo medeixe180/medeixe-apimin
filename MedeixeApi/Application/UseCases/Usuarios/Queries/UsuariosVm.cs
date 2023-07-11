@@ -1,4 +1,5 @@
-using MedeixeApi.Application.DTO.Enums;
+using MedeixeApi.Application.Dto.EnumDtos;
+using MedeixeApi.Application.Dto.UsuarioDtos;
 
 namespace MedeixeApi.Application.UseCases.Usuarios.Queries;
 
